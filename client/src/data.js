@@ -1,6 +1,6 @@
 // import p1 from './images/p1.jpg';
 // import p2 from './images/p2.jpg';
-// "use-client"
+
 
 const data = {
     products: [
