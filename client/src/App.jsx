@@ -12,8 +12,9 @@ export default function App() {
         {data.products.map(product =>(
           <div key={product.slug} className="flex flex-col justify-center items-center border-2 border-gray-600 p-3 rounded-2xl">
             <img src={product.image} alt={product.name} className="h-[500px] w-96 rounded pb-10"/>
-            <h1 className="text-center font-bold text-lg font-serif">{product.name}</h1>
-            <p className="text-center font-bold text-lg font-serif">${product.price}</p>
+            <h1 className="text-center font-semibold text-lg font-serif">{product.name}</h1>
+            <p className="text-center font-semibold text-lg font-serif">${product.price}</p>
+            <button className="bg-green-500 text-white py-2 px-5 font-serif font-semibold rounded my-3">Add to Cart</button>
           </div>
         ))}
         </div>
