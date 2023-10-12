@@ -1,8 +1,18 @@
-import data from './data';
+// import data from './data';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import {useState, useEffect} from 'react';
+import axios from 'axios';
 
 const Home = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(()=>{
+    const fetchData = async () =>{
+      const result = await axios.get("/api/products");
+      setProducts(result.data);
+    };
+    fetchData();
+  }, [])
   return (
     <div className=' bg-white text-black font-serif'>
      <Navbar />
@@ -12,7 +22,7 @@ const Home = () => {
         </h1>
       </div>
       <div className='py-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-        {data.products.map((product, index) => (
+        {products.map((product, index) => (
           <div key={index} className='px-4 sm:px-10 md:px-5'>
             <Link to={`/product/${product.slug}`}>
               <img

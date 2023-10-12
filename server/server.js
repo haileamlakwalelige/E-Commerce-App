@@ -1,5 +1,3 @@
-// import express from 'express';
-// import data from './data.js';
 const express = require('express');
 const data = require('./data.js');
 const dotenv= require('dotenv').config();
