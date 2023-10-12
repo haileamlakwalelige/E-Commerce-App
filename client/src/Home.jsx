@@ -1,21 +1,29 @@
-// import data from './data';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
-import {useState, useEffect} from 'react';
+import { useQuery} from 'react-query';
 import axios from 'axios';
 
+
+
+
+
 const Home = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(()=>{
-    const fetchData = async () =>{
-      const result = await axios.get("/api/products");
-      setProducts(result.data);
-    };
-    fetchData();
-  }, [])
+  const { isLoading, error, data: products } = useQuery('products', async () => {
+    const response = await axios.get('http://localhost:8000/api/products');
+    return response.data;
+  });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
   return (
-    <div className=' bg-white text-black font-serif'>
-     <Navbar />
+    <div className='bg-white text-black font-serif'>
+      <Navbar />
       <div>
         <h1 className='font-bold text-3xl pl-2 sm:pl-6 md:pl-12 lg:pl-24 py-4'>
           Featured Products
