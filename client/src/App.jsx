@@ -8,6 +8,7 @@ import Home from './Home';
 import Product from './Product';
 // import ErrorPage from './ErrorPage';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 export default function App() {
   // const router = createBrowserRouter([
@@ -29,6 +30,7 @@ export default function App() {
   return(
     <div>
       <RouterProvider router={router} />
+      <Footer />
     </div>
   )
 }
