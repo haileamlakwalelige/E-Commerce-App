@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 import './Home.css';
@@ -30,7 +29,6 @@ const Home = () => {
 
   return (
     <div className='bg-white text-black font-serif'>
-      <Navbar />
       <div>
         <h1 className='font-bold text-center text-3xl pl-2 sm:pl-6 md:pl-12 lg:pl-24 py-4'>
           Featured Products
