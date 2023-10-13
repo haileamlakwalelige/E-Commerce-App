@@ -19,7 +19,7 @@ const SingleProduct = (props) => {
           {product.name}
         </h1>
       </Link>
-      <p className='py-2 text-center text-lg font-semibold'>
+      <p className='py-1 text-center text-lg font-semibold'>
         ${product.price}
       </p>
       <div className='flex justify-center items-center'>
