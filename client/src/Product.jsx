@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Ratings from './components/Rating';
 import Loading from './components/Loading';
+import Error from './components/Error';
 
 const Product = () => {
   const { slug } = useParams();
@@ -23,7 +24,7 @@ const Product = () => {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div><Error errors={error.message} /></div>;
   }
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 px-6 md:px-10 lg:px-20 h-[100vh] py-12'>

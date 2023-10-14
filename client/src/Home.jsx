@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 import './Home.css';
 import Loading from './components/Loading';
+import Error from './components/Error';
 import SingleProduct from './components/SingleProduct';
 
 const Home = () => {
@@ -20,7 +21,7 @@ const Home = () => {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div><Error  errors={error.message} /></div>;
   }
 
   return (
