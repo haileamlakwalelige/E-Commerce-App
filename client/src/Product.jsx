@@ -44,17 +44,41 @@ const Product = () => {
         <div className=' text-2xl'>
           <Ratings rating={productOne.rating} numRev={productOne.numRev} />
         </div>
-        <p className='font-serif text-xl'><span className="font-serif text-lg font-semibold">Price :</span> ${productOne.price}</p>
-        <p className='font-serif text-xl'><span className="font-serif text-lg font-semibold">Description :</span> {productOne.description}</p>
+        <p className='font-serif text-xl'>
+          <span className='font-serif text-lg font-semibold'>Price :</span> $
+          {productOne.price}
+        </p>
+        <p className='font-serif text-xl'>
+          <span className='font-serif text-lg font-semibold'>
+            Description :
+          </span>{' '}
+          {productOne.description}
+        </p>
       </div>
       <div className='border-2 px-3 h-44 py-2 flex flex-col justify-center items-start'>
-        <p className='font-serif text-xl'><span className='font-semibold text-xl font-serif pr-10'>Price:</span>${productOne.price}</p>
-        <div className="flex">
-        <span className='font-semibold text-xl font-serif pr-10'>Status:</span> {productOne.countInStock >= 1 ? <p className='font-serif text-xl px-2 py-1 bg-green-600 text-white rounded'>In Stock</p> : <p className='font-serif text-xl px-2 py-1 bg-red-600 text-white rounded'>Unavailable</p>}
+        <p className='font-serif text-xl'>
+          <span className='font-semibold text-xl font-serif pr-10'>Price:</span>
+          ${productOne.price}
+        </p>
+        <div className='flex'>
+          <span className='font-semibold text-xl font-serif pr-10'>
+            Status:
+          </span>{' '}
+          {productOne.countInStock >= 1 ? (
+            <p className='font-serif text-xl px-2 py-1 bg-green-600 text-white rounded'>
+              In Stock
+            </p>
+          ) : (
+            <p className='font-serif text-xl px-2 py-1 bg-red-600 text-white rounded'>
+              Unavailable
+            </p>
+          )}
         </div>
-        {productOne.countInStock > 0 ?(
-          <button className="bg-yellow-600 text-white text-center flex justify-center items-center ml-12 px-3 py-2 rounded-lg text-lg font-serif">Add to Cart</button>
-        ):null}
+        {productOne.countInStock > 0 ? (
+          <button className='bg-yellow-600 text-white text-center flex justify-center items-center ml-12 px-3 py-2 rounded-lg text-lg font-serif'>
+            Add to Cart
+          </button>
+        ) : null}
       </div>
     </div>
   );
