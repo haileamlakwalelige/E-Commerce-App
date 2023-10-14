@@ -2,6 +2,7 @@
 import { useQuery } from 'react-query';
 import axios from 'axios';
 import './Home.css';
+import Loading from './components/Loading';
 import SingleProduct from './components/SingleProduct';
 
 const Home = () => {
@@ -15,13 +16,7 @@ const Home = () => {
   });
 
   if (isLoading) {
-    return (
-      <div className='container'>
-        <div className='loader'></div>
-        <div className='loader'></div>
-        <div className='loader'></div>
-      </div>
-    );
+    return <Loading />
   }
 
   if (error) {

@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Ratings from './components/Rating';
+import Loading from './components/Loading';
 
 const Product = () => {
   const { slug } = useParams();
@@ -18,13 +19,7 @@ const Product = () => {
   });
 
   if (isLoading) {
-    return (
-      <div className='container'>
-        <div className='loader'></div>
-        <div className='loader'></div>
-        <div className='loader'></div>
-      </div>
-    );
+    return <Loading />
   }
 
   if (error) {
