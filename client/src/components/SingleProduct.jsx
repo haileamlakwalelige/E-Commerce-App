@@ -15,8 +15,8 @@ const SingleProduct = (props) => {
           className='h-[500px] w-96 rounded-2xl'
         />
       </Link>
-      <Link to={`/product/${product.slug}`}>
-        <h1 className='text-center text-lg font-semibold pt-2'>
+      <Link to={`/product/${product.slug}`} className="list-style-none text-decoration-none">
+        <h1 className='text-decoration-none list-style-none text-center text-lg font-semibold pt-2'>
           {product.name}
         </h1>
       </Link>

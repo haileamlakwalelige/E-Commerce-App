@@ -47,7 +47,7 @@ const Product = () => {
         <p className='font-serif text-xl'>
           <span className='font-serif text-lg font-semibold'>
             Description :
-          </span>{' '}
+          </span>
           {productOne.description}
         </p>
       </div>
@@ -59,7 +59,7 @@ const Product = () => {
         <div className='flex'>
           <span className='font-semibold text-xl font-serif pr-10'>
             Status:
-          </span>{' '}
+          </span>
           {productOne.countInStock >= 1 ? (
             <p className='font-serif text-xl px-2 py-1 bg-green-600 text-white rounded'>
               In Stock
