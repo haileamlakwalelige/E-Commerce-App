@@ -9,9 +9,9 @@ const SingleProduct = (props) => {
   const { product } = props;
 
   // eslint-disable-next-line no-unused-vars
-  const { state, dispatch: ctxDispach } = useContext(Store);
+  const { state, dispatch: ctxDispatch } = useContext(Store);
   const addToCartHandler = () => {
-    ctxDispach({ type: 'CART_ADD_ITEM', payload: { ...product, quantity: 1 } });
+    ctxDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity: 1 } });
   };
 
   return (
